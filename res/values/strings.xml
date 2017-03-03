@@ -18,4 +18,6 @@
     <!-- Sim recents -->
     <string name="recents_multiwin_nolastapp">You removed all recents, please choose an app from launcher or drawer.</string>
     <string name="recents_killapp_warning">Please long press to kill app</string>
+    <!-- membar -->
+    <string name="recents_free_ram">RAM: %1$d MB free</string>
 </resources>

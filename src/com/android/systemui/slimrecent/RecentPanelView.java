@@ -611,6 +611,7 @@ public class RecentPanelView {
             setVisibility();
             exit();
         }
+        mController.updateMemoryStatus();
     }
 
     /**
@@ -643,6 +644,7 @@ public class RecentPanelView {
 
     private void removeRecentCard(RecentCard card) {
         mCardAdapter.removeCard(card);
+        mController.updateMemoryStatus();
     }
 
     /**
@@ -767,6 +769,7 @@ public class RecentPanelView {
         // Let us load the cards for it in background.
         final CardLoader cardLoader = new CardLoader();
         cardLoader.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+        mController.updateMemoryStatus();
     }
 
     /**
@@ -777,6 +780,7 @@ public class RecentPanelView {
                 mCardAdapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
         mCardRecyclerView.setVisibility((
                 mCardAdapter.getItemCount() == 0) ? View.GONE : View.VISIBLE);
+        mController.updateMemoryStatus();
     }
 
     /**
@@ -800,6 +804,7 @@ public class RecentPanelView {
                                 card.task.identifier, card.task.getExpandedState()));
             }
         }
+        mController.updateMemoryStatus();
     }
     /**
      * We are holding a list of user expanded state of apps.
