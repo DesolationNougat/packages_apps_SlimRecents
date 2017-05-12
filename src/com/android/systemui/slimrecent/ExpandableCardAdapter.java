@@ -44,7 +44,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import com.android.internal.utils.du.ActionHandler;
+//import com.android.internal.utils.du.ActionHandler;
 import com.android.systemui.R;
 
 public class ExpandableCardAdapter extends RecyclerView.Adapter<ExpandableCardAdapter.ViewHolder> {
@@ -91,7 +91,8 @@ public class ExpandableCardAdapter extends RecyclerView.Adapter<ExpandableCardAd
                     notifyItemChanged(position);
                 }
             });
-        } else if (card.killAppIcon) {
+        } 
+        /* else if (card.killAppIcon) {
             holder.expandButton.setImageResource(R.drawable.ic_killapp);
             holder.expandButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -110,7 +111,7 @@ public class ExpandableCardAdapter extends RecyclerView.Adapter<ExpandableCardAd
                     return true;
                 }
             });
-        }
+        }*/
 
         if (card.cardClickListener != null) {
             holder.itemView.setOnClickListener(card.cardClickListener);

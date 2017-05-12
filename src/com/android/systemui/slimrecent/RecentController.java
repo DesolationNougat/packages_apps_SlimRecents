@@ -590,9 +590,6 @@ public class RecentController implements RecentPanelView.OnExitListener,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.RECENT_SHOW_RUNNING_TASKS),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.Global.getUriFor(
-                    Settings.Global.SINGLE_HAND_MODE),
-                    false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.RECENT_CARD_BG_COLOR),
                     false, this, UserHandle.USER_ALL);
@@ -656,8 +653,6 @@ public class RecentController implements RecentPanelView.OnExitListener,
                 mRecentPanelView.setShowOnlyRunningTasks(Settings.System.getIntForUser(
                         resolver, Settings.System.RECENT_SHOW_RUNNING_TASKS, 0,
                         UserHandle.USER_CURRENT) == 1);
-                mRecentPanelView.setOneHandMode(Settings.Global.getString(
-                        resolver, Settings.Global.SINGLE_HAND_MODE));
                 mRecentPanelView.setCardColor(Settings.System.getIntForUser(
                         resolver, Settings.System.RECENT_CARD_BG_COLOR, 0x00ffffff,
                         UserHandle.USER_CURRENT));
